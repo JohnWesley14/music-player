@@ -1,0 +1,129 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    -webkit-font-smoothing: antialiased;
+}
+body{
+    background-color: #0f0d13;
+    
+}
+#app{
+    display: grid;
+    grid-template-columns: max-content max-content;
+    place-content: center;
+    grid-template-areas: 
+    'A B'
+    'A C';
+    gap: 32px;
+    height: 100vh;
+}
+
+#player-1{
+    grid-area: A;
+    padding: 50px 38px;
+
+}
+#player-2{
+    grid-area: B;
+}
+#player-3{
+    grid-area: C;
+}
+.player{
+    background-color: #2a2141;
+    padding: 28px;
+    border-radius: 10px;
+}
+#player-1 img{
+    width: 190px;
+    height: 190px;
+    object-fit: cover;
+}
+#player-2 img, #player-3 img{
+    width: 84px;
+    height: 84px;
+    object-fit: cover;
+}
+
+
+#player-1 .wrapper{
+    width: 190px;
+}
+.info h1{
+    font-size: 24px;
+}
+.info p{
+    opacity: 0.67;
+    font-size: 19px;
+}
+.info{
+    color: #e1e1e6;
+    display: grid;
+    gap: 9.6px;
+}
+.controls{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+.time{
+    font-size: 12px;
+    color: #c4c4cc;
+    opacity: 0.7;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 26px;
+}
+.track{
+    position: relative;
+    margin-top: 28px;
+}
+.track::before{
+    content: '';
+    background: #d9d9d9;
+    display: block;
+    width: 100%;
+    height: 6px;
+    opacity: 0.3;
+    position: absolute;
+    border-radius: 10px;
+    z-index: 2;
+}
+.track::after{
+    content: '';
+    background: #d9d9d9;
+    display: block;
+    width: 80%;
+    height: 6px;
+    position: absolute;
+    z-index: 1;
+    border-radius: 10px;
+}
+.info-wrapper{
+    display: flex;
+    gap: 28px;
+    align-items: center;
+}
+#control-3{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+@media (max-width:640px) {
+    #app{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .player{
+        width: 50vw;
+        
+    }
+    #player-1 img{
+        margin:auto;
+        width: 80%;
+        
+    }
+}
